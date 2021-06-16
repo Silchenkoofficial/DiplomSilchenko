@@ -9,7 +9,7 @@ import {
     HumanIcon
   } from '../../assets/icons';
 
-const Drawer = ({width}) => {
+const Drawer = ({width, navigation}) => {
     return (
         <SafeAreaView>
           <View style={styles.wrapper}>
@@ -34,7 +34,7 @@ const Drawer = ({width}) => {
                   borderWidth: 1
                 }} />
                 <ScrollView showsVerticalScrollIndicator={false}>
-                  <TabbarItem icon={<NewOrderIcon />} title="Заказать доставку" />
+                  <TabbarItem {...navigation} icon={<NewOrderIcon />} title="Заказать доставку" toPage="NewOrder" />
                   <TabbarItem icon={<SearchOrdersIcon />} title="Найти заказ" />
                   <TabbarItem icon={<OrdersIcon />} title="Мои заказы" />
                   <TabbarItem icon={<ChatIcon color="black" />} title="Чат" />
@@ -46,9 +46,9 @@ const Drawer = ({width}) => {
     )
 }
 
-const TabbarItem = ({icon, title, backgroundColor}) => {
+const TabbarItem = ({icon, title, backgroundColor, toPage, navigation}) => {
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => {}}>
         <View style={[styles.tabbarItem, {
           backgroundColor: backgroundColor,
           borderRadius: 10

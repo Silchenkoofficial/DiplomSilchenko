@@ -5,6 +5,7 @@ import { useFonts } from 'expo-font';
 import { Wrapper } from './Screens';
 
 import {NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import {Drawer} from './src/Components';
 

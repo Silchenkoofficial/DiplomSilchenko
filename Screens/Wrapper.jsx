@@ -6,7 +6,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {MenuIcon} from '../assets/icons';
 import { Ionicons } from '@expo/vector-icons';
 
-import {Home, NewOrder} from './';
+import {Drawer} from './../src/Components';
+import Home from './Home';
+import NewOrder from './NewOrder';
 
 const SCREEN_WIDTH = Dimensions.get('window').width
 const Stack = createStackNavigator();
@@ -81,7 +83,7 @@ const Wrapper = ({showMenu, toggleMenu}) => {
                     headerShown: true,
                     headerTitle: "Новый заказ",
                     headerTintColor: "#FF8E26",
-                    headerBackTitleVisible: false
+                    headerBackTitleVisible: true
                 }}>
                     {() => (
                         <View style={styles.mainContent}>
@@ -124,6 +126,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        paddingHorizontal: 16
+        // paddingHorizontal: 16
     }
 });
